@@ -1,3 +1,5 @@
+//tft.c gehört zur lib von Herrn Berens für Text auf dem TFT Display
+
 #include <avr/io.h>
 #include "spi.h"
 #include "tft.h"

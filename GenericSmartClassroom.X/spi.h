@@ -1,3 +1,5 @@
+//spi.h gehört zur lib von Herrn Berens für Text auf dem TFT Display
+
 #include "tft.h"
 
 #ifndef __SPI_H_

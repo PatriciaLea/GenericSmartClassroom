@@ -1,3 +1,5 @@
+//tft.h gehört zur lib von Herrn Berens für Text auf dem TFT Display
+
 #ifndef __TFT_H_
 #define __TFT_H_
 
