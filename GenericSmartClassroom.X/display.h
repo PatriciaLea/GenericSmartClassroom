@@ -1,8 +1,5 @@
 #ifndef __DISPLAY_H_
 #define	__DISPLAY_H_
-
-#define F_CPU 16000000UL
-#include <util/delay.h> // include processor files - each processor file is guarded.  
 #include <avr/io.h>
 
 // Pins & Marcros
@@ -14,8 +11,9 @@
 #define Reset   PIND3
 
 void SPI_init(void);
-
-void SPISend8Bit(uint8_t);
 void Display_init(void);
+void SPISend8Bit(uint8_t data);
+void SendCommandSeq(const uint16_t * data, uint16_t Anzahl);
+void sendData();
 
 #endif
