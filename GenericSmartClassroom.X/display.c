@@ -10,7 +10,7 @@ void SPI_init(){
     SPI_DDR |= (1 << CS) | (1 << MOSI) | (1 << SCK);
     
     //enable SPI, set as master and clock to 4Mhz
-    SPCR = (1 << SPE) | (1 <MOSI);
+    SPCR = (1 << SPE) | (1 << MSTR) | (1 <MOSI);
 }
 
 void SPISend8Bit(uint8_t data){
@@ -25,7 +25,7 @@ void Display_init(void) {
     DDRD |= (1<<D_C) | (1 << Reset);    //output: Data/Command; PD3 Reset
 
 	U16 InitData[] ={
-		//Initialisierungsdaten für 16Bit-Farben-Modus
+		//Initialisierungsdaten fÃ¼r 16Bit-Farben-Modus
 		0xFDFD, 0xFDFD,
 		//pause
 		0xEF00, 0xEE04, 0x1B04, 0xFEFE, 0xFEFE,
@@ -53,3 +53,18 @@ void Display_init(void) {
 	_delay_ms(75);
 	SendCommandSeq(&InitData[12], 23);
 }
+
+void sendColor(uint16_t color) {
+    // Send the high byte
+    SPISend8Bit(color >> 8);
+
+    // Send the low byte
+    SPISend8Bit(color & 0xFF);
+}
+
+void sendData(){
+           
+    for(uint16_t i = 0; i < 132*176; i++){
+        sendColor(0xFFE0);
+    }
+    } 
