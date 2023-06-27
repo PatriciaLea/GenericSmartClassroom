@@ -3,6 +3,8 @@
 #include <xc.h>
 #include <util/delay.h>
 
+#include "buttons.h"
+#include "sensors.h"
 #include "spi.h"
 #include "tft.h"
 
@@ -13,11 +15,18 @@
 #define BAUDRATE 9600
 #define UBRRVAL ((F_CPU/16/BAUDRATE)-1)
 
-void main(void) {
-    UART_Init(UBRRVAL);
+void init_Master(void){
+    init_Button(void);
+    init_ADC(void);
     
+    UART_Init(UBRRVAL);
     SPI_init();
-    Display_init();    
+    Display_init(); 
+}
+
+void main(void) {
+    
+    init_Master(void);
     
     while (1) {
         //Send data repeatedly, testdata test is sent 1x alle 1000ms

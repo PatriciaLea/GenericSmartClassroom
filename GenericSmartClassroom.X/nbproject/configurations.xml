@@ -6,6 +6,8 @@
                    projectFiles="true">
       <itemPath>spi.h</itemPath>
       <itemPath>tft.h</itemPath>
+      <itemPath>buttons.h</itemPath>
+      <itemPath>sensors.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -16,6 +18,9 @@
                    projectFiles="true">
       <itemPath>main.c</itemPath>
       <itemPath>tft.c</itemPath>
+      <itemPath>servo.c</itemPath>
+      <itemPath>sensors.c</itemPath>
+      <itemPath>buttons.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
