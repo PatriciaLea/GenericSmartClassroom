@@ -42,24 +42,19 @@ void init_Button(void){
     PCICR |= (1<<PCIE1);
     PCICR |= (1<<PCIE0);
     
-    OCR0A = 250;
-    
-    TCCR0A |= (1<<WGM01);
-    
-    TCCR0B |= (0b11);//set prescaler to 64 and start
-    
+    TIMSK0 |= (1<<TOIE0); //allow overflow interrupt for timer0
 }
 
 ISR(PCINT2_vect){
-            TCCR0B |= (0b11);//set prescaler to 64 and start
+    TCCR0B |= (1<< CS02) | (1<< CS00);//set prescaler to 1024 and start
 }
 
 ISR(PCINT1_vect){
-            TCCR0B |= (0b11);//set prescaler to 64 and start
+    TCCR0B |= (1<< CS02) | (1<< CS00);//set prescaler to 1024 and start
 }
 
 ISR(PCINT0_vect){
-            TCCR0B |= (0b11);//set prescaler to 64 and start
+    TCCR0B |= (1<< CS02) | (1<< CS00);//set prescaler to 1024 and start
 }
 
 ISR(TIMER0_OVF_vect){
@@ -72,4 +67,5 @@ ISR(TIMER0_OVF_vect){
     else if(BUTTON3_PRESSED){
         
     }
+    TCCR0B &= ~(1<<CS00) | ~(1<<CS01) | ~(1<<CS02); //stop timer
 }

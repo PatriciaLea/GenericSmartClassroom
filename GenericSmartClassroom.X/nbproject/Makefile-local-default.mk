@@ -15,23 +15,23 @@
 # $ makeMP_CC="/opt/microchip/mplabc30/v3.30c/bin/pic30-gcc" ...  
 #
 SHELL=cmd.exe
-PATH_TO_IDE_BIN=D:/mplabX/mplab_platform/platform/../mplab_ide/modules/../../bin/
+PATH_TO_IDE_BIN=E:/Programme/MPlabX IDE/mplab_platform/platform/../mplab_ide/modules/../../bin/
 # Adding MPLAB X bin directory to path.
-PATH:=D:/mplabX/mplab_platform/platform/../mplab_ide/modules/../../bin/:$(PATH)
+PATH:=E:/Programme/MPlabX IDE/mplab_platform/platform/../mplab_ide/modules/../../bin/:$(PATH)
 # Path to java used to run MPLAB X when this makefile was created
-MP_JAVA_PATH="D:\mplabX\sys\java\zulu8.64.0.19-ca-fx-jre8.0.345-win_x64/bin/"
+MP_JAVA_PATH="E:\Programme\MPlabX IDE\sys\java\zulu8.64.0.19-ca-fx-jre8.0.345-win_x64/bin/"
 OS_CURRENT="$(shell uname -s)"
-MP_CC="C:\Program Files\Microchip\xc8\v2.41\bin\xc8-cc.exe"
+MP_CC="E:\Programme\MPlab Compiler\bin\xc8-cc.exe"
 # MP_CPPC is not defined
 # MP_BC is not defined
-MP_AS="C:\Program Files\Microchip\xc8\v2.41\bin\xc8-cc.exe"
-MP_LD="C:\Program Files\Microchip\xc8\v2.41\bin\xc8-cc.exe"
-MP_AR="C:\Program Files\Microchip\xc8\v2.41\bin\xc8-ar.exe"
-DEP_GEN=${MP_JAVA_PATH}java -jar "D:/mplabX/mplab_platform/platform/../mplab_ide/modules/../../bin/extractobjectdependencies.jar"
-MP_CC_DIR="C:\Program Files\Microchip\xc8\v2.41\bin"
+MP_AS="E:\Programme\MPlab Compiler\bin\xc8-cc.exe"
+MP_LD="E:\Programme\MPlab Compiler\bin\xc8-cc.exe"
+MP_AR="E:\Programme\MPlab Compiler\bin\xc8-ar.exe"
+DEP_GEN=${MP_JAVA_PATH}java -jar "E:/Programme/MPlabX IDE/mplab_platform/platform/../mplab_ide/modules/../../bin/extractobjectdependencies.jar"
+MP_CC_DIR="E:\Programme\MPlab Compiler\bin"
 # MP_CPPC_DIR is not defined
 # MP_BC_DIR is not defined
-MP_AS_DIR="C:\Program Files\Microchip\xc8\v2.41\bin"
-MP_LD_DIR="C:\Program Files\Microchip\xc8\v2.41\bin"
-MP_AR_DIR="C:\Program Files\Microchip\xc8\v2.41\bin"
-DFP_DIR=D:/mplabX/packs/Microchip/ATmega_DFP/3.0.158
+MP_AS_DIR="E:\Programme\MPlab Compiler\bin"
+MP_LD_DIR="E:\Programme\MPlab Compiler\bin"
+MP_AR_DIR="E:\Programme\MPlab Compiler\bin"
+DFP_DIR=E:/Programme/MPlabX IDE/packs/Microchip/ATmega_DFP/3.0.158
