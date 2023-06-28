@@ -5,6 +5,7 @@
 
 #include "buttons.h"
 #include "sensors.h"
+#include "servo.h"
 #include "spi.h"
 #include "tft.h"
 
@@ -15,10 +16,10 @@
 #define BAUDRATE 9600
 #define UBRRVAL ((F_CPU/16/BAUDRATE)-1)
 
-void init_Master(void){
-    init_Button(void);
-    init_ADC(void);
-    
+void init_Master(){
+    init_Button();
+    init_ADC();
+    init_Servo();
     UART_Init(UBRRVAL);
     SPI_init();
     Display_init(); 
@@ -26,7 +27,7 @@ void init_Master(void){
 
 void main(void) {
     
-    init_Master(void);
+    init_Master();
     
     while (1) {
         //Send data repeatedly, testdata test is sent 1x alle 1000ms
@@ -35,7 +36,6 @@ void main(void) {
         
         //to do send data to display
     }
-    
 }
 
 

@@ -8,6 +8,7 @@
       <itemPath>tft.h</itemPath>
       <itemPath>buttons.h</itemPath>
       <itemPath>sensors.h</itemPath>
+      <itemPath>servo.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

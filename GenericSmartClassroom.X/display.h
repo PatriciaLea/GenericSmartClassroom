@@ -13,7 +13,7 @@
 void SPI_init(void);
 void Display_init(void);
 void SPISend8Bit(uint8_t data);
-void SendCommandSeq(const uint16_t * data, uint16_t Anzahl);
+//void SendCommandSeq(const uint16_t * data, uint16_t Anzahl);
 void sendData();
 
 #endif

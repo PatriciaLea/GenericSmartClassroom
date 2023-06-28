@@ -13,10 +13,10 @@ void init_Button(void){
     
     //LED Gelb
     DDRB |= (1<<DDB4); //PIN B4 is output
-    PORTB |= ~(1<<PORTB4); // low
+
     
     DDRD |= (1<<DDD7);
-    PORTD |= ~(1<<PORTD7);
+
     
     
     // Set BUTTON_PIN as input with pull-up resistor
@@ -43,10 +43,13 @@ void init_Button(void){
     PCICR |= (1<<PCIE0);
     
     TIMSK0 |= (1<<TOIE0); //allow overflow interrupt for timer0
+    
+    OCR0A = 250;
 }
 
 ISR(PCINT2_vect){
     TCCR0B |= (1<< CS02) | (1<< CS00);//set prescaler to 1024 and start
+
 }
 
 ISR(PCINT1_vect){
@@ -58,6 +61,7 @@ ISR(PCINT0_vect){
 }
 
 ISR(TIMER0_OVF_vect){
+    TCCR0B &= ~((1<<CS00) | (1<<CS01) | (1<<CS02)); //stop timer
     if(BUTTON_PRESSED){
         PORTB ^= (1<<PORTB4);
     }
@@ -67,5 +71,4 @@ ISR(TIMER0_OVF_vect){
     else if(BUTTON3_PRESSED){
         
     }
-    TCCR0B &= ~(1<<CS00) | ~(1<<CS01) | ~(1<<CS02); //stop timer
 }

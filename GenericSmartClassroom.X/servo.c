@@ -3,7 +3,7 @@
 
 #define SERVO_PIN       PB1
 
-void initServo() {
+void init_Servo() {
     // Set the servo pin as output
     DDRB |= (1 << SERVO_PIN);
     
