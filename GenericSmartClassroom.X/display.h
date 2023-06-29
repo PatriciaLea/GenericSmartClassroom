@@ -13,8 +13,6 @@
 #define Reset   PIND3
 
 
-
-
 void SPI_init(void);
 void Display_init(void);
 void SPISend8Bit(uint8_t data);
