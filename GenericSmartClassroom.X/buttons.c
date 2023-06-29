@@ -8,14 +8,15 @@
 #define BUTTON_PRESSED  !(PIND & (1 << BUTTON_PIN))
 #define BUTTON2_PRESSED  !(PINC & (1 << BUTTON2_PIN))
 
+char lightStatus = 0;
+
 
 void init_Button(void){
     
     //LED Gelb
-    DDRB |= (1<<DDB4); //PIN B4 is output
-
-    
-    DDRD |= (1<<DDD7);
+    //DDRB |= (1<<DDB4); //PIN B4 is output
+    //LED Gelb
+    DDRD |= (1<<DDD7);//PIN D7 is output
 
     
     
@@ -55,10 +56,18 @@ ISR(PCINT1_vect){
 ISR(TIMER0_OVF_vect){
     TCCR0B &= ~((1<<CS00) | (1<<CS01) | (1<<CS02)); //stop timer
     if(BUTTON_PRESSED){
-        PORTB ^= (1<<PORTB4);
+        PORTD ^= (1<<PORTD7);
     }
     else if(BUTTON2_PRESSED){
         servo();
     }
+}
 
+void changeLightStatus(void) {
+    PORTD ^= (1 << PORTD7);
+    lightStatus ^=1;
+}
+
+char get_lightStatus(){
+    return lightStatus;
 }

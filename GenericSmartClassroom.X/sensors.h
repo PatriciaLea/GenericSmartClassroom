@@ -3,11 +3,11 @@
 
 extern void init_ADC(void);
 
-char getLightIn(void);
+char get_photoIn(void);
 
-char getLightOut(void);
+char get_photoOut(void);
 
-char getTemp(void);
+char get_temp(void);
 
 #endif	/* SENSORS_H */
 

@@ -37,13 +37,13 @@ void main(void) {
     
     while (1) {
         //Send data repeatedly, testdata test is sent 1x alle 1000ms
-        UART_Transmit(LIGHT_IN, getLightIn());
+        UART_Transmit(LIGHT_IN, get_photoIn());
         _delay_ms(100);
         
-        UART_Transmit(LIGHT_OUT, getLightOut());
+        UART_Transmit(LIGHT_OUT, get_photoOut());
         _delay_ms(100);
         
-        UART_Transmit(TEMP, getTemp());
+        UART_Transmit(TEMP, get_temp());
         _delay_ms(100);
                
         //UART_Transmit(STATUS_LIGHT, );

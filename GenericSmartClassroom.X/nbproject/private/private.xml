@@ -6,7 +6,11 @@
             <file>file:/C:/Users/leado/MPLABXProjects/GenericSmartClassroom.X/main.c</file>
         </group>
         <group>
-            <file>file:/E:/Programme/Unity/Projekts/GenericSmartClassroom/GenericSmartClassroom.X/buttons.c</file>
+            <file>file:/C:/Users/malte/Documents/GitHub/GenericSmartClassroom/GenericSmartClassroom.X/sensors.c</file>
+            <file>file:/C:/Users/malte/Documents/GitHub/GenericSmartClassroom/GenericSmartClassroom.X/tft.c</file>
+            <file>file:/C:/Users/malte/Documents/GitHub/GenericSmartClassroom/GenericSmartClassroom.X/buttons.c</file>
+            <file>file:/C:/Users/malte/Documents/GitHub/GenericSmartClassroom/GenericSmartClassroom.X/main.c</file>
+            <file>file:/C:/Users/malte/Documents/GitHub/GenericSmartClassroom/GenericSmartClassroom.X/display.c</file>
         </group>
     </open-files>
 </project-private>

@@ -7,7 +7,7 @@ build/default/production/tft.o.d build/default/production/tft.o: tft.c \
  c:\program\ files\microchip\xc8\v2.41\avr\avr\include\stdint.h \
  c:\program\ files\microchip\xc8\v2.41\avr\avr\include\bits\alltypes.h \
  c:\program\ files\microchip\xc8\v2.41\avr\avr\include\bits\stdint.h \
- C:/Program\ Files/Microchip/MPLABX/v6.05/packs/Microchip/ATmega_DFP/3.0.158/xc8/avr/include/avr/iom328p.h \
+ D:/mplabX/packs/Microchip/ATmega_DFP/3.0.158/xc8/avr/include/avr/iom328p.h \
  c:\program\ files\microchip\xc8\v2.41\avr\avr\include\avr\portpins.h \
  c:\program\ files\microchip\xc8\v2.41\avr\avr\include\avr\common.h \
  c:\program\ files\microchip\xc8\v2.41\avr\avr\include\avr\fuse.h \
@@ -30,7 +30,7 @@ c:\program\ files\microchip\xc8\v2.41\avr\avr\include\bits\alltypes.h:
 
 c:\program\ files\microchip\xc8\v2.41\avr\avr\include\bits\stdint.h:
 
-C:/Program\ Files/Microchip/MPLABX/v6.05/packs/Microchip/ATmega_DFP/3.0.158/xc8/avr/include/avr/iom328p.h:
+D:/mplabX/packs/Microchip/ATmega_DFP/3.0.158/xc8/avr/include/avr/iom328p.h:
 
 c:\program\ files\microchip\xc8\v2.41\avr\avr\include\avr\portpins.h:
 
