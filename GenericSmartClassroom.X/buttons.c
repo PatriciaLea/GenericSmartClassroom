@@ -45,6 +45,7 @@ void init_Button(void){
     TIMSK0 |= (1<<TOIE0); //allow overflow interrupt for timer0
     
     OCR0A = 250;
+    sei();
 }
 
 ISR(PCINT2_vect){

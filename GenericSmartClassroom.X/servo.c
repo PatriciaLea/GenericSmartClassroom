@@ -11,8 +11,6 @@ void init_Servo() {
     TCCR1A |= (1 << WGM11) | (1 << COM1A1);
     TCCR1B |= (1 << WGM13) | (1 << WGM12);
     
-    // Set Timer1 prescaler to 8
-    TCCR1B |= (1 << CS11);
     
     ICR1 = 40000; // for 50 Hz
     
@@ -23,7 +21,12 @@ void init_Servo() {
     
 }
 
+ISR(TIMER1_OVF_vect){
+    TCCR1B &= ~(1 << CS11); //stop timer
+}
+
 void servo(){
+    TCCR1B |= (1 << CS11); //start timer
     if (OCR1A == 2000){
         OCR1A = 4000;
     }
