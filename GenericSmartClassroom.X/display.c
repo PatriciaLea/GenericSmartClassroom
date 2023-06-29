@@ -87,7 +87,7 @@ void draw_test(){
    // SendCommandSeq(&InitData[0], 2);
 	
 	
-	for (int i = 0; i <= 568; i++){
+	for (int i = 0; i <= 1515; i++){
 		if (newProject[i] == newProject[i+1]){
 			SPISend8Bit(newProject[i]);
 
