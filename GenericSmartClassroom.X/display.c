@@ -2,19 +2,29 @@
 #define F_CPU 16000000UL
 #include <util/delay.h>
 
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+
 #include "display.h"
 #include "tft.h"
 #include "spi.h"
 #include "picture.h"
 
-uint16_t Bildschirm[6] = {
+U16 Bildschirm[6] = {
 	0xEF00,
 	0x1805,
 	0x1283,
 	0x1500,
 	0x1300,
 	0x16AE
-};
+}; 
+
+
+uint8_t x1_coord = 0x6E; //110
+uint8_t x2_coord = 0xA9; //169
+uint8_t y1_coord = 0x0F; // 15
+uint8_t y2_coord = 0x72; //114
 
 U16 InitData[] ={
 		//Initialisierungsdaten fuer 16Bit-Farben-Modus
@@ -79,26 +89,70 @@ void sendData(){
     for(uint16_t i = 0; i < 132*176; i++){
         sendColor(0xFFE0);
     }
-    
     } 
 
-
-void draw_test(){
-   // SendCommandSeq(&InitData[0], 2);
-	
-	
-	for (int i = 0; i <= 1515; i++){
+/*
+if (getLightStatus == 0){
+    
+    
+}
+else if(getLightStatus == 1){
+    
+}
+else if(getLightStatus == 2){
+    
+}
+else if(getLightStatus == 3){
+    
+}*/
+void draw_picture(){
+     
+	for (int i = 0; i <= 568; i++){
 		if (newProject[i] == newProject[i+1]){
 			SPISend8Bit(newProject[i]);
+            SPISend8Bit(newProject[i]);
 
-			for (int j=0; j <= newProject[i+1]; j++){
+			for (int j=0; j <= newProject[i+2]; j++){
 				SPISend8Bit(newProject[i]);
+                SPISend8Bit(newProject[i]);
+
 			}
-			i += 1;
+			i += 2;
 			
 			}else{
 			SPISend8Bit(newProject[i]);
+            SPISend8Bit(newProject[i]);
 		}
 		
 	}
+}
+
+void drawScreen(int temperature, char lighintensity){
+    
+    //Display-Hintergrund weiß "färben"
+    for(int i = 0; i < 23232; i++) {
+        SPISend8Bit(0xFF);
+        SPISend8Bit(0xFF);
+    };
+    char text[5];
+    sprintf(text,"%2d°C", temperature);
+    char pointer[6];
+    
+    strcpy(pointer, text);
+    
+    //TFT_Window(x1_coord, y1_coord, x2_coord, y2_coord, TFT_Landscape);
+    
+    //draw_picture();
+    TFT_Print(pointer, 10, 50,5, TFT_16BitBlack,TFT_16BitWhite, TFT_Landscape);
+    
+        TFT_Window(x1_coord, y1_coord, x2_coord, y2_coord, TFT_Landscape);
+        
+        for (int i=0;i<6000;i++){
+            SPISend8Bit(0x80);
+            SPISend8Bit(0x00);
+        }
+        TFT_Window(x1_coord, y1_coord, x2_coord, y2_coord, TFT_Landscape);
+        //SendCommandSeq(0xEF00, 2);
+        //to do send data to display
+        draw_picture();
 }
