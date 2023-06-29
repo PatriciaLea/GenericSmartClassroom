@@ -87,14 +87,14 @@ void draw_test(){
    // SendCommandSeq(&InitData[0], 2);
 	
 	
-	for (int i = 0; i <= 661; i++){
+	for (int i = 0; i <= 568; i++){
 		if (newProject[i] == newProject[i+1]){
 			SPISend8Bit(newProject[i]);
 
-			for (int j=0; j <= newProject[i+2]; j++){
+			for (int j=0; j <= newProject[i+1]; j++){
 				SPISend8Bit(newProject[i]);
 			}
-			i += 2;
+			i += 1;
 			
 			}else{
 			SPISend8Bit(newProject[i]);
