@@ -12,7 +12,6 @@ unsigned char thermi;
 unsigned char photo1;
 unsigned char photo2;
 
-const uint8_t temps[] ={8,10,12,14,16,18,19,21,22,24,25,26,27,29,30,31,32,33,34,35};
 
 void init_ADC(void){
     
@@ -73,7 +72,7 @@ ISR(ADC_vect){
             break;
         case 0x40:
             value = ADC;
-            thermi = temps[value-10];
+            thermi = 1/(log((10000*(5/(value*5/1024)-1))/10000)/3435+1/298.15)-273.15;
             
             setPhoto1;
             break;
