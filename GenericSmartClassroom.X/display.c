@@ -1,4 +1,6 @@
+#define F_CPU 16E6
 #include <xc.h>
+#include <util/delay.h>
 
 #include "display.h"
 #include "tft.h"
