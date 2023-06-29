@@ -10,6 +10,7 @@
 
 void init_Servo();
 void servo();
+char get_blindStatus();
 
 #endif	/* SERVO_H */
 

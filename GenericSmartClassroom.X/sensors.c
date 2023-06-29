@@ -2,6 +2,7 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
+#include "uartSend.h"
 
 
 
@@ -116,6 +117,7 @@ ISR(TIMER2_OVF_vect) {
 
         }
         timer_ovf = 0;
+        UART_SendData();
     }
 }
 

@@ -1,5 +1,10 @@
+#define F_CPU 16E6
 #include <xc.h>
 #include "uartSend.h"
+#include "servo.h"
+#include "sensors.h"
+#include "buttons.h"
+#include <util/delay.h>
 
 void UART_Init(uint16_t ubrr) { //S.149
     //Get baud rate 
@@ -25,4 +30,22 @@ void UART_Transmit(Type type, uint16_t data) {
     while (!(UCSR0A & (1 << UDRE0)));
     //data into buffer, sends data
     UDR0 = data;
+}
+
+void UART_SendData(){
+            //Send data repeatedly, testdata test is sent 1x alle 1000ms
+        UART_Transmit(LIGHT_IN, get_photoIn());
+        _delay_ms(100);
+        
+        UART_Transmit(LIGHT_OUT, get_photoOut());
+        _delay_ms(100);
+        
+        UART_Transmit(TEMP, get_temp());
+        _delay_ms(100);
+ 
+        UART_Transmit(STATUS_LIGHT, get_lightStatus());
+        _delay_ms(100);
+        
+        UART_Transmit(STATUS_BLINDS, get_blindStatus());
+        _delay_ms(100);
 }

@@ -14,5 +14,6 @@ typedef enum {
 
 void UART_Init(uint16_t ubrr);
 void UART_Transmit(Type type, uint16_t data);
+void UART_SendData();
 
 #endif

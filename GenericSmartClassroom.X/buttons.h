@@ -9,7 +9,7 @@
 #define	BUTTONS_H
 
 extern void init_Button(void);
-extern void get_lightStatus(void);
+extern char get_lightStatus(void);
 extern void changeLightStatus(void);
 
 #endif

@@ -3,6 +3,8 @@
 
 #define SERVO_PIN       PB1
 
+char blindStatus;
+
 void init_Servo() {
     // Set the servo pin as output
     DDRB |= (1 << SERVO_PIN);
@@ -29,8 +31,14 @@ void servo(){
     TCCR1B |= (1 << CS11); //start timer
     if (OCR1A == 2000){
         OCR1A = 4000;
+        blindStatus =0;
     }
     else {
         OCR1A =2000;
+        blindStatus =1;
     }
+}
+
+char get_blindStatus(){
+    return blindStatus;
 }

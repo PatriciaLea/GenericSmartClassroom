@@ -24,4 +24,14 @@ void UART_Receive(Type type, uint16_t data) {
     
     type = receivedType;
     data = receivedData;
+    if(type == 3){
+        if(data == 0){
+            changeLightStatus();
+        }
+    }
+    else if(type == 5){
+        if (data == 0){
+            servo();
+        }
+    }
 }

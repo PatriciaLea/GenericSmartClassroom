@@ -15,7 +15,10 @@ build/default/production/uartSend.o.d build/default/production/uartSend.o: \
  c:\program\ files\microchip\xc8\v2.41\avr\avr\include\avr\common.h \
  c:\program\ files\microchip\xc8\v2.41\avr\avr\include\avr\fuse.h \
  c:\program\ files\microchip\xc8\v2.41\avr\avr\include\avr\lock.h \
- uartSend.h
+ uartSend.h servo.h sensors.h buttons.h \
+ c:\program\ files\microchip\xc8\v2.41\avr\avr\include\util\delay.h \
+ c:\program\ files\microchip\xc8\v2.41\avr\avr\include\util\delay_basic.h \
+ c:\program\ files\microchip\xc8\v2.41\avr\avr\include\math.h
 
 c:\program\ files\microchip\xc8\v2.41\avr\lib\gcc\avr\5.4.0\include\xc.h:
 
@@ -48,3 +51,15 @@ c:\program\ files\microchip\xc8\v2.41\avr\avr\include\avr\fuse.h:
 c:\program\ files\microchip\xc8\v2.41\avr\avr\include\avr\lock.h:
 
 uartSend.h:
+
+servo.h:
+
+sensors.h:
+
+buttons.h:
+
+c:\program\ files\microchip\xc8\v2.41\avr\avr\include\util\delay.h:
+
+c:\program\ files\microchip\xc8\v2.41\avr\avr\include\util\delay_basic.h:
+
+c:\program\ files\microchip\xc8\v2.41\avr\avr\include\math.h:
