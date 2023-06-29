@@ -1,4 +1,4 @@
-//spi.h gehört zur lib von Herrn Berens für Text auf dem TFT Display
+//spi.h gehÃ¶rt zur lib von Herrn Berens fÃ¼r Text auf dem TFT Display
 
 #include "tft.h"
 
@@ -10,5 +10,7 @@ extern void TFT_Print(char* Text, U8 X, U8 Y, U8 Scale, U16 ForeColor, U16 BackC
 extern void SendCommandSeq(U16 * data, U16 count);
 
 extern void SPISend8Bit(U8 data);
+
+extern void TFT_Window(U8 x1, U8 y1, U8 x2, U8 y2, U8 TFT_Orientation);
 
 #endif
