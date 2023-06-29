@@ -20,9 +20,9 @@ void init_Master(){
     init_Button();
     init_ADC();
     init_Servo();
-    //UART_Init(UBRRVAL);
-    //SPI_init();
-    //Display_init();
+    UART_Init(UBRRVAL);
+    SPI_init();
+    Display_init();
 }
 
 void main(void) {

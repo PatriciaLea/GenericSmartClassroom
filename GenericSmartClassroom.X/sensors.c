@@ -9,9 +9,9 @@
 
 float valuePhoto1;
 float valuePhoto2;
-unsigned char thermi;
-unsigned char photo1;
-unsigned char photo2;
+int thermi;
+int photo1;
+int photo2;
 
 
 void init_ADC(void){
@@ -43,7 +43,7 @@ void init_ADC(void){
 }
 
 ISR(ADC_vect){
-    int value;
+    float value;
     switch (ADMUX){
         case 0x42:
             valuePhoto1 = ADC;
@@ -73,7 +73,12 @@ ISR(ADC_vect){
             break;
         case 0x40:
             value = ADC;
-            thermi = 1/(log((10000*(5/(value*5/1024)-1))/10000)/3435+1/298.15)-273.15;
+            value = ADC; 
+            value = value*(float)5/(float)1024;
+            value = (float)10000*((float)5/value-(float)1);
+            value = log(value/(float)10000);
+            value = (float)1/(value/(float)3435+(float)1/(float)298.15)-(float)273.15;
+            thermi = value;
             
             setPhoto1;
             break;
