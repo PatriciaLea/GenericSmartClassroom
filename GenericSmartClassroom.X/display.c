@@ -6,7 +6,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "display.h"
 #include "tft.h"
 #include "spi.h"
 #include "picture.h"
