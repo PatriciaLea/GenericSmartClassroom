@@ -35,22 +35,6 @@ void main(void) {
     drawScreen(30, 10);
     
     while (1) {
-        //Send data repeatedly, testdata test is sent 1x alle 1000ms
-        UART_Transmit(LIGHT_IN, getLightIn());
-        _delay_ms(100);
-        
-        UART_Transmit(LIGHT_OUT, getLightOut());
-        _delay_ms(100);
-        
-        UART_Transmit(TEMP, getTemp());
-        _delay_ms(100);
-               
-        //UART_Transmit(STATUS_LIGHT, );
-        //UART_Transmit(STATUS_BLINDS, ());
-        
-
-        
-        
 
     }
 }
