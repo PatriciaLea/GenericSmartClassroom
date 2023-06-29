@@ -57,6 +57,6 @@ void main(void) {
         
         TFT_Window(x1_coord, y1_coord, x2_coord, y2_coord, TFT_Landscape);
         //to do send data to display
-        //draw_test();
+        draw_test();
     }
 }
